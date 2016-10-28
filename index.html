@@ -6,12 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
 
-<!--        Bootstrap Via CDN-->
+        <!--        Bootstrap Via CDN-->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!--        Fontawesome Via CDN-->
+        <!--        Fontawesome Via CDN-->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
-<!--        AngularJS Core Files-->
+       <!--Jquery for Bootstrap Dependencies-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+        <!--Bootstrap Javascript Via CDN-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <!--        AngularJS Core Files-->
         <script src="//code.angularjs.org/1.5.8/angular.min.js"></script>
         <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>
         <script src="//code.angularjs.org/1.5.8/angular-resource.min.js"></script>
@@ -22,11 +28,32 @@
         <script src="directives.js"></script>
     </head>
     <body>
-        <div class="container">
-
+     <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                     <i class="fa fa-bars" aria-hidden="true"></i>
+                  </button>
+                  <a class="navbar-brand" href="#/">Book Review App</a>
+                </div>
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav  pull-right">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/info">Search</a></li>
+                    <li><a href="#/review">Review(test)</a></li>
+                  </ul>
+                  
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+      </nav>
+      <div class="container">
+          
             <div ng-view></div>
 
-		</div>
+	  </div>
 
     </body>
 </html>
