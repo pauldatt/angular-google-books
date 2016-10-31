@@ -1,1 +1,25 @@
-<p> hello this is book review page</p>
+<!--Display this div if selected book is not an empty object i.e book is selected from search page-->
+<div ng-class="{ 'not-display': !selectedBook.volumeInfo }">
+    
+    <div>
+        <img ng-src = "{{ selectedBook.volumeInfo.imageLinks.smallThumbnail }}">
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>{{ selectedBook.volumeInfo.title }}</h3>
+            <h4>Author(s): {{ selectedBook.volumeInfo.authors | authorFilter }}</h4>
+            <h4>Publisher: {{ selectedBook.volumeInfo.publisher }}</h4>
+            <h4>Published Date: {{ selectedBook.volumeInfo.publishedDate }}</h4>
+            <h4> Description: </h4>
+            <p> {{ selectedBook.volumeInfo.description }}</p>
+        </div>
+    </div>
+</div>
+
+
+<!--Display this div if no book is selected-->
+<div ng-class="{ 'not-display': selectedBook.volumeInfo }">
+    <h2> No Book has been selected for further info. Go to search page and select a book to view.</h2>
+</div>
+

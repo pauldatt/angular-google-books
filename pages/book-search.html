@@ -18,9 +18,9 @@
       <img ng-src = "{{ result.volumeInfo.imageLinks.smallThumbnail }}">
     </div>
     <div class="col-sm-9">
-      <h4>{{ result.volumeInfo.title }}</h4>
-      <h5>authors with some sort of filter</h5>
-      <h5>{{ result.volumeInfo.publishedDate }}</h5>
+      <h4><a ng-click="linkToBook(result)" href="#/info">{{ result.volumeInfo.title }}</a></h4>
+      <h5>Author(s): {{ result.volumeInfo.authors | authorFilter }}</h5>
+      <h5>Date Pub: {{ result.volumeInfo.publishedDate }}</h5>
     </div>
   </div>
 </div>

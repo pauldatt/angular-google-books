@@ -4,7 +4,7 @@ bookApp.controller('HomeController', ['$scope', function($scope) {
 }]);
 
 //controller for searching books
-bookApp.controller('BookSearchController', ['$scope','bookObjects', function($scope,bookObjects) {
+bookApp.controller('BookSearchController', ['$scope','bookObjects', 'selectService',function($scope,bookObjects,selectService) {
     
     $scope.searchInput = "";
     
@@ -14,10 +14,18 @@ bookApp.controller('BookSearchController', ['$scope','bookObjects', function($sc
             $scope.searchResults = response.items;
         });
     }
+    
+    $scope.linkToBook = function(obj){
+        selectService.setBook(obj);
+    };
+    
+    
 }]);
 
 
 //controller for when viewing reviews
-bookApp.controller('BookInfoController', ['$scope', function($scope) {
-
+bookApp.controller('BookInfoController', ['$scope','selectService', function($scope, selectService) {
+    
+    $scope.selectedBook = selectService.getBook();
+        
 }]);

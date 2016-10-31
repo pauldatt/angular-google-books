@@ -4,3 +4,23 @@ bookApp.factory('bookObjects', function ($resource) {
         { get: { method: 'JSONP' }
         });
 });
+
+
+//setting the picked book
+bookApp.factory('selectService', function() {
+    
+ var selectedBook = {}
+ 
+ function setBook(obj) {
+   selectedBook = obj;
+ }
+ function getBook() {
+  return selectedBook;
+ }
+
+ return {
+  setBook: setBook,
+  getBook: getBook
+ }
+
+});
