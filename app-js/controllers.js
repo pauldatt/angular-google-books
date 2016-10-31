@@ -8,6 +8,7 @@ bookApp.controller('BookSearchController', ['$scope','bookObjects', 'selectServi
     
     $scope.searchInput = "";
     
+    //execute the request for the google books data through the book objects
     $scope.submit = function(){
         bookObjects.get({ q: $scope.searchInput }, function (response) {
 
@@ -15,6 +16,7 @@ bookApp.controller('BookSearchController', ['$scope','bookObjects', 'selectServi
         });
     }
     
+    //execute the connection of book objects between two controllers through clicking on the link
     $scope.linkToBook = function(obj){
         selectService.setBook(obj);
     };
