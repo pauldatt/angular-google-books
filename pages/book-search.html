@@ -1,0 +1,26 @@
+<h3>Search for your favourite books and get info on them! Max 20 Results!</h3>
+
+<form ng-submit="submit()">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="form-group">
+          <input type="text" ng-model="searchInput" class="form-control">
+        </div>
+    
+        <input type="submit" class="btn btn-primary" value="Search">
+      </div>
+    </div>
+</form>
+
+<div class="result-list">
+  <div class="row result-row" ng-repeat="result in searchResults">
+    <div class="col-sm-3">
+      <img ng-src = "{{ result.volumeInfo.imageLinks.smallThumbnail }}">
+    </div>
+    <div class="col-sm-9">
+      <h4>{{ result.volumeInfo.title }}</h4>
+      <h5>authors with some sort of filter</h5>
+      <h5>{{ result.volumeInfo.publishedDate }}</h5>
+    </div>
+  </div>
+</div>
